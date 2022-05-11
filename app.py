@@ -17,8 +17,8 @@ def home():
     out = ""
     x = ""
     try:
-        x = requests.get("https://monitoring.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=200&username=rhaerri&passhash=3835350314")
-        #x = requests.get(url)
+        x = requests.get("https://monitoring.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=rhaerri&passhash=3835350314")
+        #x = requests.get("https://demo-mon-01.demoren.ch/api/table.xml?content=sensortree&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=200&username=prtgadmin&password=password")
     except requests.exceptions.RequestException as e:  # This is the correct syntax
         print(e)
         #out += (e, file=sys.stderr)
