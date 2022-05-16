@@ -1,6 +1,7 @@
 from flask import Flask, request
 import requests
 import json
+#import pandas as pd
 
 app = Flask(__name__)
 
@@ -15,18 +16,24 @@ def home():
     url_test = "https://monitoring.itris-cloud.ch/api/table.xml?content=sensortree&"+auth
     url_test_demo = "https://demo-mon-01.demoren.ch/api/table.xml?content=sensortree&"+auth_demo
     out = ""
-    x = ""
+    export = ""
+    response = ""
+    data = ""
+
     try:
-        x = requests.get("https://monitoring.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=rhaerri&passhash=3835350314")
-        #x = requests.get("https://demo-mon-01.demoren.ch/api/table.xml?content=sensortree&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=200&username=prtgadmin&password=password")
+        response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.json?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=svc_prtg-api_pause&passhash=3970061384")
+        #refexport = export.sensors
     except requests.exceptions.RequestException as e:  # This is the correct syntax
         print(e)
         #out += (e, file=sys.stderr)
         #raise SystemExit(e)
-        
-    #data = json.loads(x.text)
-    #data = json.dumps(data)
-    return(x.text)
+    data = json.loads(response.text)
+    data = json.dumps(data)
+    #response_df = pd.DataFrame(data=data, columns=['device', 'sensor', 'status'])
+    #response_df.head(10)
+    print(response)
+    deganzihtmlcode = """<html><head><h1>titel</h1></head></html>""" + data
+    return(deganzihtmlcode)
+    
     #out += "\n" + x
     return "Hello \n " + out
-    #https://monitoring.itris-cloud.ch/api/table.htm?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=200&username=rhaerri&passhash=3835350314&noraw=1
