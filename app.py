@@ -37,7 +37,7 @@ def home():
     
     #out += "\n" + x
     return "Hello \n " + out
-
+"""
 @app.route("/", methods=['GET'])
 def button_pause():
     row = ""
@@ -48,5 +48,5 @@ def button_pause():
         objid = row.Cells[0].Value
         uri = prtgcore+"'/api/pause.htm?id='objid'&pausemsg='message - Paused by USERNAME'&action=0&'auth"
         export = export.get(uri)
-
+"""
 
