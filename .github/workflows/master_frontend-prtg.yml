@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'frontend-prtg'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E7554C553F4844B3812E3508100175B7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9E69B00499F344DBADAFE0639092128C }}
