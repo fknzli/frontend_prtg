@@ -2,20 +2,12 @@ from flask import Flask, request
 import requests
 import json
 import os
-#import pandas as pd
 
 app = Flask(__name__)
 
 
-
 @app.route("/", methods=['GET'])
 def home():
-    auth = "username=rhaerri&passhash=3835350314"
-    auth_demo = "username=prtgadmin&password=password"
-    url_demo = "https://demo-mon-01.demoren.ch/table.htm?content=sensors&output=json&columns=objid&count=1&"+auth_demo+"&noraw=1"
-    url = "https://monitoring.itris-cloud.ch/api/table.htm?content=sensors&output=json&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=200&"+auth+"&noraw=1"
-    url_test = "https://monitoring.itris-cloud.ch/api/table.xml?content=sensortree&"+auth
-    url_test_demo = "https://demo-mon-01.demoren.ch/api/table.xml?content=sensortree&"+auth_demo
     out = ""
     export = ""
     response = ""
