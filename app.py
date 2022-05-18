@@ -15,7 +15,8 @@ def home():
     data = ""
 
     try:
-        response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=svc_prtg-api_pause&passhash=3970061384")
+        response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.json?content=sensortree&username=svc_prtg-api_pause&passhash=3970061384")
+        #response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=svc_prtg-api_pause&passhash=3970061384")
         #refexport = export.sensors
     except requests.exceptions.RequestException as e:  # This is the correct syntax
         print(e)
