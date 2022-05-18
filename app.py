@@ -24,7 +24,7 @@ def home():
         #raise SystemExit(e)
     #data = json.loads(response.text)
     #data = json.dumps(data)
-    return(response.text)
+    return("""<html><head><h1>titel</h1></head></html>""" + response.text)
     #htmlcode = """<html><head><h1>titel</h1></head></html>""" + data
     #return(htmlcode)
     
