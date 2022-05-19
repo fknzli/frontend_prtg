@@ -24,10 +24,9 @@ def home():
         #raise SystemExit(e)
     #data = json.loads(response.text)
     #data = json.dumps(data)
-    #return("""<html><head><h1>Test titel</h1></head></html>""" + response.text)
+    return("""<html><head><h1>Test titel</h1></head></html>""" + response.text)
     #htmlcode = """<html><head><h1>titel</h1></head></html>""" + datagit
     #return(htmlcode)
-    return render_template('index.html')
     #out += "\n" + x
     #return "Hello \n " + out
 """
