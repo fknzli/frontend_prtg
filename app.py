@@ -13,16 +13,6 @@ def home():
     export = ""
     response = ""
     data = ""
-    """
-    if request.method == "POST":
-        response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=svc_prtg-api_pause&passhash=3970061384")
-        return("""<html><head><h1>Test titel</h1></head></html>""" + response.text)
-    return render_template("form.html")
-
-if __name__=='__main__':
-    app.run()
-
-"""
     try:
         #response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.json?content=sensortree&username=svc_prtg-api_pause&passhash=3970061384")
         response = requests.get("https://az999-vmappl02.itris-cloud.ch/api/table.xml?content=sensors&output=html&columns=objid,probe,group,device,sensor,status,message,lastvalue&count=400&username=svc_prtg-api_pause&passhash=3970061384")
